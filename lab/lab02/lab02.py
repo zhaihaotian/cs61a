@@ -15,7 +15,7 @@ def lambda_curry2(func):
     3
     """
     "*** YOUR CODE HERE ***"
-    return ______
+    return lambda x: lambda y: func(x , y)
 
 
 
@@ -47,7 +47,14 @@ def count_cond(condition):
     8
     """
     "*** YOUR CODE HERE ***"
-
+    def count(n):
+        i , count_num = 1 , 0
+        while i <= n :
+            if condition(n , i) :
+                count_num += 1
+            i += 1
+        return count_num
+    return count
 
 
 def compose1(f, g):
